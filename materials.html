@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Access training materials for American Church Planting Training, including resources for Gospel Conversations and 4 Fields Intensive.">
+    <meta name="description" content="Access training materials for American Church Planting Training, including Gospel Conversations, 4 Fields Intensive, Mid-Level, Strategy Coordinator, and Player Coach Training.">
     <meta name="keywords" content="church planting, training materials, Christian education, ministry resources">
     <meta name="author" content="American Church Planting Training">
     <title>Training Materials - American Church Planting Training</title>
@@ -12,7 +12,7 @@
         body {
             font-family: 'Open Sans', sans-serif;
             margin: 0;
-            padding-top: 0px; /* Adjusted for initial header height */
+            padding-top: 0px;
             background-color: #ffffff;
             color: #4b4b4b;
             line-height: 1.6;
@@ -22,6 +22,9 @@
         }
         header {
             background-color: #1c2533;
+            background-image: url('https://raw.githubusercontent.com/counciloftroas/counciloftroas.github.io/main/pattern.png');
+            background-repeat: repeat;
+            background-size: 30px 30px; /* Smaller pattern as requested */
             color: #ffffff;
             padding: 20px;
             text-align: center;
@@ -29,24 +32,24 @@
             top: 0;
             z-index: 1000;
             border-bottom: 1px solid #b7a57a;
-            transition: all 0.3s ease; /* Smooth transition for shrinking */
+            transition: all 0.3s ease;
         }
         header.shrunk {
-            padding: 10px; /* Reduced padding when shrunk */
+            padding: 10px;
         }
         header img {
             max-width: 150px;
             margin-bottom: 10px;
-            transition: max-width 0.3s ease; /* Smooth logo size transition */
+            transition: max-width 0.3s ease;
         }
         header.shrunk img {
-            max-width: 100px; /* Smaller logo when header is shrunk */
+            max-width: 100px;
         }
         header h1 {
             font-family: 'Lora', serif;
             margin: 0;
             font-size: 2.5em;
-            transition: opacity 0.3s ease; /* Fade out title */
+            transition: opacity 0.3s ease;
         }
         header.shrunk h1 {
             opacity: 0;
@@ -56,7 +59,7 @@
         header p {
             margin: 5px 0;
             font-size: 1.1em;
-            transition: opacity 0.3s ease; /* Fade out subtitle */
+            transition: opacity 0.3s ease;
         }
         header.shrunk p {
             opacity: 0;
@@ -85,48 +88,92 @@
         nav ul li a:hover {
             text-decoration: underline;
         }
-        main {
+        .container {
+            display: flex;
             max-width: 1200px;
             margin: 40px auto;
             padding: 0 20px;
+            gap: 20px;
+        }
+        .main-content {
+            flex: 7;
+        }
+        .sidebar {
+            flex: 3;
+            position: sticky;
+            top: 120px; /* Below header */
+            align-self: flex-start;
         }
         section {
             margin-bottom: 40px;
+            padding: 20px;
+            background-color: #f8f8f8; /* Shelf background */
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shelf shadow */
         }
         h2 {
             font-family: 'Lora', serif;
             color: #1c2533;
             font-size: 2em;
             margin-bottom: 20px;
+            text-align: center;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            font-size: 0.9em;
+        .bookshelf {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            padding: 10px;
         }
-        th, td {
+        .book {
+            background-color: #ffffff;
+            background-image: linear-gradient(
+                45deg,
+                rgba(183, 165, 122, 0.1) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(183, 165, 122, 0.1) 50%,
+                rgba(183, 165, 122, 0.1) 75%,
+                transparent 75%,
+                transparent
+            );
+            background-size: 20px 20px; /* Subtle pattern for books */
             border: 1px solid #b7a57a;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #1c2533;
-            color: #ffffff;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #1c2533;
             font-weight: 600;
+            font-size: 0.9em;
+            height: 120px; /* Book-like height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Book shadow */
+            transform: rotate(1deg); /* Slight tilt for bookshelf effect */
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
-        tr:nth-child(even) {
-            background-color: #f8f8f8;
+        .book:nth-child(even) {
+            transform: rotate(-1deg); /* Alternate tilt for variety */
         }
-        tr:hover {
+        .book:hover {
+            transform: scale(1.05) rotate(0deg); /* Straighten and scale on hover */
             background-color: #e8e8e8;
         }
-        a {
+        .sidebar h3 {
+            font-family: 'Lora', serif;
             color: #1c2533;
-            text-decoration: none;
+            font-size: 1.5em;
+            margin-bottom: 20px;
         }
-        a:hover {
-            text-decoration: underline;
+        .video-container {
+            margin-bottom: 20px;
+        }
+        .video-container iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+            border-radius: 5px;
         }
         footer {
             background-color: #1c2533;
@@ -136,14 +183,27 @@
             font-size: 0.9em;
         }
         @media (max-width: 768px) {
-            table {
-                font-size: 0.8em;
+            .container {
+                flex-direction: column;
             }
-            th, td {
-                padding: 4px;
+            .sidebar {
+                position: static;
+            }
+            .video-container iframe {
+                height: 150px;
             }
             header.shrunk img {
-                max-width: 80px; /* Smaller logo on mobile when shrunk */
+                max-width: 80px;
+            }
+            .bookshelf {
+                grid-template-columns: 1fr;
+            }
+            .book {
+                height: 100px;
+                transform: rotate(0deg); /* No tilt on mobile */
+            }
+            .book:nth-child(even) {
+                transform: rotate(0deg);
             }
         }
     </style>
@@ -163,45 +223,65 @@
         </ul>
     </nav>
 
-    <main>
-        <section id="materials">
-            <h2>Training Overview</h2>
-            <p>Access our collection of training resources below. These materials represent phases of church planting.</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Type</th>
-                        <th>Link</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Four Fields of Kingdom Growth (Phase 1)</td>
-                        <td>PDF</td>
-                        <td><a href="https://20ba5426-3a8d-4178-b213-44503cb74ed2.filesusr.com/ugd/3fe2a5_680eaf0f639548729d669a8c71953b65.pdf">View</a></td>
-                    </tr>
-                    <tr>
-                        <td>Foundations (Phase 2)</td>
-                        <td>PDF</td>
-                        <td><a href="https://drive.google.com/file/d/0B65FqZkueQVfTG1yaFJuaGZoSkU/view?usp=sharing&resourcekey=0-IOqbzIq9YeGYIM1vC6gXvA">View</a></td>
-                    </tr>
-                    <tr>
-                        <td>Confessions (Phase 3)</td>
-                        <td>PDF</td>
-                        <td><a href="https://drive.google.com/file/d/16YPTxc00n9Kq1RGL9Bups8Xl5BPhyG_I/view?usp=sharing">View</a></td>
-                    </tr>
-                    <tr>
-                        <td>Hosting A Training Rollout</td>
-                        <td>PDF</td>
-                        <td><a href="https://docs.google.com/document/d/11UxwIkGMwqZjRQWMjpBnKzSUeKCMKIKWB_cYLEx9mq0/edit?usp=sharing">View</a></td>
-                    </tr>
-                    <!-- Add more rows as needed -->
-                </tbody>
-            </table>
-            <p style="margin-top: 20px; font-style: italic;">Note: Replace placeholder links (YOUR_MATERIAL_URL1, etc.) with actual URLs to your resources (e.g., PDFs or videos hosted on Google Drive, Dropbox, or your GitHub repo).</p>
-        </section>
-    </main>
+    <div class="container">
+        <div class="main-content">
+            <section id="start-here">
+                <h2>Start Here</h2>
+                <div class="bookshelf">
+                    <a href="https://docs.google.com/document/d/11UxwIkGMwqZjRQWMjpBnKzSUeKCMKIKWB_cYLEx9mq0/edit?tab=t.0" class="book" aria-label="Host a Training Rollout">Host a Training Rollout</a>
+                    <a href="#calendar" class="book" aria-label="Attend a Training">Attend a Training</a>
+                    <a href="https://www.obeychrist.com" class="book" aria-label="Disciple a New Believer">Disciple a New Believer</a>
+                    <a href="https://www.youtube.com/watch?v=jgqHTRdJVBQ&list=PLNRYzNOHxJtDwXF0QgvI1nTA6csgartXc" class="book" aria-label="Understand Four Fields">Understand Four Fields</a>
+                </div>
+            </section>
+
+            <section id="gct">
+                <h2>Gospel Conversations Training</h2>
+                <div class="bookshelf">
+                    <a href="https://docs.google.com/spreadsheets/d/1Sbn-2VibgR2R4FIKM2rlfUIMBgk98xyJ-HxkB4nJyYk/edit?gid=521386433#gid=521386433" class="book" aria-label="Sample GCT Schedule">Sample GCT Schedule</a>
+                    <a href="https://www.youtube.com/watch?v=HKcWXPtQXhc&list=PL3FAZqigucLzXTMM_NQOMfveZdehLd9ZC&index=1" class="book" aria-label="Training and Teaching">Training and Teaching</a>
+                    <a href="https://www.youtube.com/watch?v=D5az2LAtDDw&list=PL3FAZqigucLzWG9Ttgi-D2pIssNP04LHf" class="book" aria-label="411 Training">411 Training</a>
+                    <a href="https://youtu.be/cEiLWwJb-lo?si=Cf637RGISIL2Ix6V" class="book" aria-label="Model Command of Christ #1">Model Command of Christ #1</a>
+                    <a href="https://www.youtube.com/watch?v=i9c6KVAqObs" class="book" aria-label="Five Parts / Four Fields">Five Parts / Four Fields</a>
+                </div>
+            </section>
+
+            <section id="four-fields">
+                <h2>Four Fields Intensive Training</h2>
+                <div class="bookshelf">
+                    <a href="https://docs.google.com/spreadsheets/d/1NPN6Yl4js6gGjbCAdPe5pWfBk8JGVktWs37NedYtuvg/edit?gid=1433941124#gid=1433941124" class="book" aria-label="Sample 4F Training Schedule">Sample 4F Training Schedule</a>
+                    <a href="https://youtube.com/playlist?list=PL3FAZqigucLxgYkwUJNUpksIBst9pzaxm&si=FMuE79tu1YKtak7i" class="book" aria-label="Leadership Training Videos">Leadership Training Videos</a>
+                    <a href="https://youtu.be/wl6ObtvMKRY?si=h6OjRefh8mGO0i5s" class="book" aria-label="Swarm Training">Swarm Training</a>
+                    <a href="https://drive.google.com/drive/folders/1Bz0LerRhltsbhvTBPY72jrEo9kwP_lip?usp=sharing" class="book" aria-label="Training Module Guides">Training Module Guides</a>
+                </div>
+            </section>
+
+            <section id="strategy-coordinator">
+                <h2>Strategy Coordinator Training</h2>
+                <div class="bookshelf">
+                    <a href="#" class="book" aria-label="Material Coming Soon">Material Coming Soon</a>
+                </div>
+            </section>
+
+            <section id="player-coach">
+                <h2>Player Coach Training</h2>
+                <div class="bookshelf">
+                    <a href="https://www.playercoachtraining.com" class="book" aria-label="Player Coach Training Videos">Player Coach Training Videos</a>
+                </div>
+            </section>
+        </div>
+
+        <div class="sidebar">
+            <h3>Key Training Videos</h3>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" title="Gospel Conversations Training Video" allowfullscreen></iframe>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" title="4 Fields Intensive Training Video" allowfullscreen></iframe>
+            </div>
+            <p style="font-style: italic; font-size: 0.9em;">Replace placeholder video IDs (VIDEO_ID_1, VIDEO_ID_2) with actual YouTube or Vimeo video IDs.</p>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2025 American Church Planting Training. All rights reserved.</p>
