@@ -21,18 +21,16 @@
             scroll-behavior: smooth;
         }
         header {
-            background-color: #1c2533;
-            background-image: url('https://raw.githubusercontent.com/counciloftroas/counciloftroas.github.io/main/pattern.png');
-            background-repeat: repeat;
-            background-size: 30px 30px; /* Smaller pattern as requested */
+            background-color: #1c2533; /* Fallback color */
+            background-image: url('Stone castlewall.jpg');
+            background-size: cover;
             color: #ffffff;
-            padding: 20px;
             text-align: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid #b7a57a;
-            transition: all 0.3s ease;
+            border-bottom: 1px solid #c6ab6a;
+            transition: all 0.3s ease-in-out; /* Smooth transition for shrinking */
         }
         header.shrunk {
             padding: 10px;
@@ -67,7 +65,7 @@
             overflow: hidden;
         }
         nav {
-            background-color: #b7a57a;
+            background-color: #c6ab6a;
             padding: 10px 0;
         }
         nav ul {
@@ -137,7 +135,7 @@
                 transparent
             );
             background-size: 20px 20px; /* Subtle pattern for books */
-            border: 1px solid #b7a57a;
+            border: 1px solid #c6ab6a;
             border-radius: 5px;
             padding: 20px;
             text-align: center;
@@ -210,16 +208,15 @@
 </head>
 <body>
     <header id="header">
-        <img src="/Asset%201.png" alt="American Church Planting Training Logo">
+        <img src="ACPT Logo.png" alt="American Church Planting Training Logo">
         <h1>American Church Planting Training</h1>
-        <p>5 Trainings in 12 Months</p>
     </header>
 
     <nav>
         <ul>
-            <li><a href="index.html#calendar">Training Calendar</a></li>
+            <li><a href="#calendar">Training Calendar</a></li>
             <li><a href="materials.html">Training Materials</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
