@@ -205,6 +205,32 @@
                 transform: rotate(0deg);
             }
         }
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        .carousel img {
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+        .carousel img.active {
+            display: block;
+        }
+        .carousel button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .carousel button.prev { left: 10px; }
+        .carousel button.next { right: 10px; }
     </style>
 </head>
 <body>
@@ -215,11 +241,19 @@
 
     <nav>
         <ul>
-            <li><a href="https://americanchurchplanting.com/index.html#calendar">Training Calendar</a></li>
+            <li><a href="#calendar">Training Calendar</a></li>
             <li><a href="materials.html">Training Materials</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+
+    <div class="carousel">
+        <img src="https://brigada.org/wp-content/uploads/2018/05/church-planting.jpg" alt="Church Planting 1" class="active">
+        <img src="https://images.squarespace-cdn.com/content/v1/5d895e7bce9feb09f34602dd/fba86fa6-9079-4626-a6a9-070b5bda3735/Church+Planting+Training" alt="Church Planting 2">
+        <img src="https://s3.us-east-1.amazonaws.com/gbod-assets/generic/DigitialPlantingTraining_Article.jpg" alt="Church Planting 3">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div>
 
     <div class="container">
         <div class="main-content">
@@ -268,6 +302,7 @@
                 </div>
             </section>
         </div>
+    </div>
 
     <footer>
         <p>&copy; 2025 American Church Planting Training. All rights reserved.</p>
@@ -281,6 +316,27 @@
             } else {
                 header.classList.remove('shrunk');
             }
+        });
+
+        const carousel = document.querySelector('.carousel');
+        const images = carousel.querySelectorAll('img');
+        const prev = carousel.querySelector('.prev');
+        const next = carousel.querySelector('.next');
+        let current = 0;
+
+        function showImage(index) {
+            images.forEach(img => img.classList.remove('active'));
+            images[index].classList.add('active');
+        }
+
+        prev.addEventListener('click', () => {
+            current = (current > 0) ? current - 1 : images.length - 1;
+            showImage(current);
+        });
+
+        next.addEventListener('click', () => {
+            current = (current < images.length - 1) ? current + 1 : 0;
+            showImage(current);
         });
     </script>
 </body>
