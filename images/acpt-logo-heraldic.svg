@@ -1,0 +1,127 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldEngraved" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e6d49a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#c9a962;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a08b4a;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="crossHatch" patternUnits="userSpaceOnUse" width="4" height="4">
+      <rect width="4" height="4" fill="none"/>
+      <path d="M0,4 L4,0" stroke="#1a2a40" stroke-width="0.3" opacity="0.4"/>
+      <path d="M0,0 L4,4" stroke="#1a2a40" stroke-width="0.3" opacity="0.4"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <circle cx="100" cy="100" r="100" fill="#1a2a40"/>
+  
+  <!-- Heraldic shield (traditional) -->
+  <path d="M100 25 L70 35 L50 60 L50 130 L100 175 L150 130 L150 60 L130 35 Z" 
+        fill="url(#goldEngraved)" stroke="#1a2a40" stroke-width="2"/>
+  
+  <!-- Inner shield area -->
+  <path d="M100 35 L75 43 L58 65 L58 125 L100 165 L142 125 L142 65 L125 43 Z" 
+        fill="#faf7f2"/>
+        
+  <!-- Engraved border lines -->
+  <path d="M100 35 L75 43 L58 65 L58 125 L100 165 L142 125 L142 65 L125 43 Z" 
+        fill="none" stroke="#c9a962" stroke-width="1"/>
+  <path d="M100 40 L78 47 L63 68 L63 122 L100 160 L137 122 L137 68 L122 47 Z" 
+        fill="none" stroke="#c9a962" stroke-width="0.5" opacity="0.6"/>
+  
+  <!-- Banner scroll at top -->
+  <path d="M70 45 Q100 40 130 45 L125 55 Q100 50 75 55 Z" fill="url(#goldEngraved)"/>
+  <text x="100" y="52" text-anchor="middle" font-family="serif" font-size="7" fill="#1a2a40" font-weight="bold">ACPT</text>
+  
+  <!-- Open book (engraved style) -->
+  <g transform="translate(100,95)">
+    <!-- Book pages -->
+    <path d="M-35 -15 Q0 -25 35 -15 L35 20 Q0 10 -35 20 Z" fill="#faf7f2" stroke="#c9a962" stroke-width="1"/>
+    
+    <!-- Page shadows/depth -->
+    <path d="M-35 -12 Q0 -22 35 -12 L35 17 Q0 7 -35 17 Z" fill="none" stroke="#c9a962" stroke-width="0.5" opacity="0.6"/>
+    <path d="M-35 -9 Q0 -19 35 -9 L35 14 Q0 4 -35 14 Z" fill="none" stroke="#c9a962" stroke-width="0.5" opacity="0.4"/>
+    
+    <!-- Engraved text lines -->
+    <g stroke="#1a2a40" stroke-width="0.4">
+      <!-- Left page -->
+      <line x1="-28" y1="-10" x2="-5" y2="-8"/>
+      <line x1="-28" y1="-6" x2="-5" y2="-4"/>
+      <line x1="-28" y1="-2" x2="-5" y2="0"/>
+      <line x1="-28" y1="2" x2="-5" y2="4"/>
+      <line x1="-28" y1="6" x2="-5" y2="8"/>
+      
+      <!-- Right page -->
+      <line x1="5" y1="-8" x2="28" y2="-10"/>
+      <line x1="5" y1="-4" x2="28" y2="-6"/>
+      <line x1="5" y1="0" x2="28" y2="-2"/>
+      <line x1="5" y1="4" x2="28" y2="2"/>
+      <line x1="5" y1="8" x2="28" y2="6"/>
+    </g>
+    
+    <!-- Cross-hatching for shading -->
+    <g opacity="0.3">
+      <rect x="-35" y="15" width="15" height="5" fill="url(#crossHatch)"/>
+      <rect x="20" y="15" width="15" height="5" fill="url(#crossHatch)"/>
+    </g>
+    
+    <!-- Engraved sword -->
+    <g stroke="#c9a962" fill="url(#goldEngraved)">
+      <!-- Blade with engraved details -->
+      <rect x="-2" y="-40" width="4" height="55" stroke-width="1"/>
+      <polygon points="-2,-40 0,-48 2,-40" stroke-width="1"/>
+      
+      <!-- Fuller (central groove) -->
+      <rect x="-1" y="-40" width="2" height="50" fill="none" stroke="#a08b4a" stroke-width="0.5"/>
+      
+      <!-- Engraved lines on blade -->
+      <g stroke="#a08b4a" stroke-width="0.3">
+        <line x1="-1.5" y1="-35" x2="-1.5" y2="10"/>
+        <line x1="1.5" y1="-35" x2="1.5" y2="10"/>
+        <line x1="-0.5" y1="-38" x2="-0.5" y2="8"/>
+        <line x1="0.5" y1="-38" x2="0.5" y2="8"/>
+      </g>
+      
+      <!-- Cross guard -->
+      <rect x="-15" y="12" width="30" height="4" stroke-width="1"/>
+      <!-- Guard quillons -->
+      <circle cx="-15" cy="14" r="2" stroke-width="0.8" fill="#c9a962"/>
+      <circle cx="15" cy="14" r="2" stroke-width="0.8" fill="#c9a962"/>
+      
+      <!-- Engraved crosses on guard -->
+      <g stroke="#1a2a40" stroke-width="0.6">
+        <line x1="-15" y1="12" x2="-15" y2="16"/>
+        <line x1="-17" y1="14" x2="-13" y2="14"/>
+        <line x1="15" y1="12" x2="15" y2="16"/>
+        <line x1="13" y1="14" x2="17" y2="14"/>
+      </g>
+      
+      <!-- Handle -->
+      <rect x="-2" y="16" width="4" height="15" fill="#654321" stroke="#8b4513" stroke-width="1"/>
+      <!-- Handle wrapping -->
+      <g stroke="#8b4513" stroke-width="0.5">
+        <line x1="-2" y1="18" x2="2" y2="18"/>
+        <line x1="-2" y1="21" x2="2" y2="21"/>
+        <line x1="-2" y1="24" x2="2" y2="24"/>
+        <line x1="-2" y1="27" x2="2" y2="27"/>
+      </g>
+      
+      <!-- Pommel -->
+      <circle cx="0" cy="33" r="4" stroke-width="1" fill="url(#goldEngraved)"/>
+      <circle cx="0" cy="33" r="2.5" fill="none" stroke="#a08b4a" stroke-width="0.5"/>
+      <text x="0" y="35" text-anchor="middle" font-size="3" fill="#1a2a40">✠</text>
+    </g>
+  </g>
+  
+  <!-- Bottom banner -->
+  <path d="M60 140 Q100 135 140 140 L135 150 Q100 155 65 150 Z" fill="url(#goldEngraved)"/>
+  <text x="100" y="147" text-anchor="middle" font-family="serif" font-size="5" fill="#1a2a40">VERBUM DOMINI</text>
+  
+  <!-- Decorative corner elements -->
+  <g fill="url(#goldEngraved)" opacity="0.6">
+    <circle cx="40" cy="40" r="3"/>
+    <circle cx="160" cy="40" r="3"/>
+    <circle cx="40" cy="160" r="3"/>
+    <circle cx="160" cy="160" r="3"/>
+  </g>
+</svg>
